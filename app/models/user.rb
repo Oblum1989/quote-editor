@@ -29,6 +29,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :company
+  has_many :tasks, dependent: :destroy
 
   def name
     email.split("@").first.capitalize
